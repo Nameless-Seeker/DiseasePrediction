@@ -1,4 +1,3 @@
-import io
 import pickle
 from typing import List
 import pandas as pd

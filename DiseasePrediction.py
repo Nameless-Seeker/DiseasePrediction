@@ -196,7 +196,7 @@ def heart_prediction(heart_input_data: HeartPrediction):
 #######################################################################################
 # Brain tumour detection
 
-load_model = tf.keras.models.load_model("brain.keras", compile=False)
+load_model = tf.keras.models.load_model("brain_fixed.keras", compile=False)
 # print("Model loaded successfully")
 # # print(model.summary())
 

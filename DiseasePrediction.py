@@ -7,7 +7,7 @@ from fastapi import FastAPI
 import joblib
 import numpy as np
 from pydantic import BaseModel, Field
-import tensorflow as tf
+# import tensorflow as tf
 
 disease = FastAPI()
 
@@ -193,49 +193,49 @@ def heart_prediction(heart_input_data: HeartPrediction):
         result["chances"] = no_heart_problem
         
     return result
-#######################################################################################
-# Brain tumour detection
-
-load_model = tf.keras.models.load_model("brain.keras")
-# print("Model loaded successfully")
-# # print(model.summary())
-
-def PredictBrainTumour(image):
-    # Preprocess
-    image = image.resize((64,64))
-    image_array = np.array(image) / 255.0
-    image_array = np.expand_dims(image_array, axis=0)
-
-    # Predict
-    prediction = load_model.predict(image_array)[0]
-    return prediction
-
-
-@disease.post("/BrainPrediction")
-async def Brain(file: UploadFile = File(...)):
-    contents = await file.read()
-
-    # Convert image into model readable image
-    image = Image.open(io.BytesIO(contents)).convert("RGB")
-
-
-    # Getting the prediction confidence [0.4512,0.6554]
-    prediction = PredictBrainTumour(image)
-
-    # Converting the confidence to integer % -> [45,55]
-    tumour = int(prediction[1]*100)     # -> 45
-    no_tumour = int(prediction[0]*100)  # -> 55
-
-    result = {}
-
-    # Comparing the results
-    if(tumour > no_tumour):
-        result['result'] = "You have tumour"
-        result['chances'] = tumour
-    else:
-        result['result'] = "You do not have tumour"
-        result['chances'] = no_tumour
-
-    print(result)
-
-    return result
+# #######################################################################################
+# # Brain tumour detection
+#
+# load_model = tf.keras.models.load_model("brain.keras")
+# # print("Model loaded successfully")
+# # # print(model.summary())
+#
+# def PredictBrainTumour(image):
+#     # Preprocess
+#     image = image.resize((64,64))
+#     image_array = np.array(image) / 255.0
+#     image_array = np.expand_dims(image_array, axis=0)
+#
+#     # Predict
+#     prediction = load_model.predict(image_array)[0]
+#     return prediction
+#
+#
+# @disease.post("/BrainPrediction")
+# async def Brain(file: UploadFile = File(...)):
+#     contents = await file.read()
+#
+#     # Convert image into model readable image
+#     image = Image.open(io.BytesIO(contents)).convert("RGB")
+#
+#
+#     # Getting the prediction confidence [0.4512,0.6554]
+#     prediction = PredictBrainTumour(image)
+#
+#     # Converting the confidence to integer % -> [45,55]
+#     tumour = int(prediction[1]*100)     # -> 45
+#     no_tumour = int(prediction[0]*100)  # -> 55
+#
+#     result = {}
+#
+#     # Comparing the results
+#     if(tumour > no_tumour):
+#         result['result'] = "You have tumour"
+#         result['chances'] = tumour
+#     else:
+#         result['result'] = "You do not have tumour"
+#         result['chances'] = no_tumour
+#
+#     print(result)
+#
+#     return result

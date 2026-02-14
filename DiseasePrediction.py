@@ -1,8 +1,6 @@
-# import io
 import pickle
 from typing import List
 import pandas as pd
-from PIL import Image
 from fastapi import FastAPI
 import joblib
 import numpy as np

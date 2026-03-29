@@ -7,7 +7,8 @@ Built with simplicity and clarity in mind, especially for real-world usage and i
 
 ---
 ## Video Demo
-https://youtu.be/ejK7z4ae-2s
+[![Watch the video](https://img.youtube.com/vi/TFx9VcgPPic/0.jpg)]([https://youtu.be/TFx9VcgPPic](https://youtu.be/ejK7z4ae-2s))
+
 ## 🚀 Features
 
 - ✅ Predicts disease likelihood based on medical input parameters

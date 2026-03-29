@@ -6,7 +6,8 @@ This project demonstrates **end-to-end ML workflow** — from data preprocessing
 Built with simplicity and clarity in mind, especially for real-world usage and interviews.
 
 ---
-
+## Video Demo
+https://youtu.be/ejK7z4ae-2s
 ## 🚀 Features
 
 - ✅ Predicts disease likelihood based on medical input parameters

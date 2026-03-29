@@ -7,7 +7,7 @@ Built with simplicity and clarity in mind, especially for real-world usage and i
 
 ---
 ## Video Demo
-[![Watch the video](https://img.youtube.com/vi/ejK7z4ae-2s/0.jpg)](https://youtu.be/TFx9VcgPPic)
+[![Watch the video](https://img.youtube.com/vi/ejK7z4ae-2s/0.jpg)](https://youtu.be/ejK7z4ae-2s)
 
 ## 🚀 Features
 
